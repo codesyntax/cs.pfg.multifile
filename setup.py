@@ -25,6 +25,7 @@ setup(name='cs.pfg.multifile',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.PloneFormGen'
       ],
       entry_points="""
       # -*- Entry points: -*-
