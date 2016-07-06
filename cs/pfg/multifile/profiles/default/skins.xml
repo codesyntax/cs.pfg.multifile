@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<object name="portal_skins">
+
+ <object name="multifile_skins"
+         meta_type="Filesystem Directory View"
+         directory="cs.pfg.multifile:skins/multifile_skins"/>
+
+ <skin-path name="*">
+  <layer insert-after="custom"
+         name="multifile_skins"/>
+ </skin-path>
+
+</object>

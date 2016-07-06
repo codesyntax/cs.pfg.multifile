@@ -25,7 +25,6 @@ setup(name='cs.pfg.multifile',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
@@ -33,4 +32,6 @@ setup(name='cs.pfg.multifile',
       [z3c.autoinclude.plugin]
       target = plone
       """,
+      setup_requires=["PasteScript"],
+      paster_plugins=["ZopeSkel"],
       )

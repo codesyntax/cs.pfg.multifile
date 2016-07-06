@@ -2,7 +2,7 @@
 """
 
 from zope.i18nmessageid import MessageFactory
-from pfg.multifile import config
+from cs.pfg.multifile import config
 
 from Products.Archetypes import atapi
 from Products.CMFCore import utils
@@ -11,7 +11,7 @@ from Products.CMFCore import utils
 # This will be imported with the special name "_" in most modules. Strings
 # like _(u"message") will then be extracted by i18n tools for translation.
 
-multifileMessageFactory = MessageFactory('pfg.multifile')
+multifileMessageFactory = MessageFactory('cs.pfg.multifile')
 
 
 def initialize(context):

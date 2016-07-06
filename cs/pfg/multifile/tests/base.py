@@ -51,14 +51,14 @@ def setup_product():
     # We may also need to load dependencies, e.g.:
     #   ztc.installPackage('borg.localrole')
 
-    ztc.installPackage('pfg.multifile')
+    ztc.installPackage('cs.pfg.multifile')
 
 # The order here is important: We first call the (deferred) function
 # which installs the products we need for this product. Then, we let
 # PloneTestCase set up this product on installation.
 
 setup_product()
-ptc.setupPloneSite(products=['pfg.multifile'])
+ptc.setupPloneSite(products=['cs.pfg.multifile'])
 
 
 class TestCase(ptc.PloneTestCase):

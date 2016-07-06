@@ -48,4 +48,127 @@ Finally, let's return to the front page of our site before continuing
     >>> browser.open(portal_url)
 
 -*- extra stuff goes here -*-
+The FormMultiFileField content type
+===============================
+
+In this section we are tesing the FormMultiFileField content type by performing
+basic operations like adding, updadating and deleting FormMultiFileField content
+items.
+
+Adding a new FormMultiFileField content item
+--------------------------------
+
+We use the 'Add new' menu to add a new content item.
+
+    >>> browser.getLink('Add new').click()
+
+Then we select the type of item we want to add. In this case we select
+'FormMultiFileField' and click the 'Add' button to get to the add form.
+
+    >>> browser.getControl('FormMultiFileField').click()
+    >>> browser.getControl(name='form.button.Add').click()
+    >>> 'FormMultiFileField' in browser.contents
+    True
+
+Now we fill the form and submit it.
+
+    >>> browser.getControl(name='title').value = 'FormMultiFileField Sample'
+    >>> browser.getControl('Save').click()
+    >>> 'Changes saved' in browser.contents
+    True
+
+And we are done! We added a new 'FormMultiFileField' content item to the portal.
+
+Updating an existing FormMultiFileField content item
+---------------------------------------
+
+Let's click on the 'edit' tab and update the object attribute values.
+
+    >>> browser.getLink('Edit').click()
+    >>> browser.getControl(name='title').value = 'New FormMultiFileField Sample'
+    >>> browser.getControl('Save').click()
+
+We check that the changes were applied.
+
+    >>> 'Changes saved' in browser.contents
+    True
+    >>> 'New FormMultiFileField Sample' in browser.contents
+    True
+
+Removing a/an FormMultiFileField content item
+--------------------------------
+
+If we go to the home page, we can see a tab with the 'New FormMultiFileField
+Sample' title in the global navigation tabs.
+
+    >>> browser.open(portal_url)
+    >>> 'New FormMultiFileField Sample' in browser.contents
+    True
+
+Now we are going to delete the 'New FormMultiFileField Sample' object. First we
+go to the contents tab and select the 'New FormMultiFileField Sample' for
+deletion.
+
+    >>> browser.getLink('Contents').click()
+    >>> browser.getControl('New FormMultiFileField Sample').click()
+
+We click on the 'Delete' button.
+
+    >>> browser.getControl('Delete').click()
+    >>> 'Item(s) deleted' in browser.contents
+    True
+
+So, if we go back to the home page, there is no longer a 'New FormMultiFileField
+Sample' tab.
+
+    >>> browser.open(portal_url)
+    >>> 'New FormMultiFileField Sample' in browser.contents
+    False
+
+Adding a new FormMultiFileField content item as contributor
+------------------------------------------------
+
+Not only site managers are allowed to add FormMultiFileField content items, but
+also site contributors.
+
+Let's logout and then login as 'contributor', a portal member that has the
+contributor role assigned.
+
+    >>> browser.getLink('Log out').click()
+    >>> browser.open(portal_url + '/login_form')
+    >>> browser.getControl(name='__ac_name').value = 'contributor'
+    >>> browser.getControl(name='__ac_password').value = default_password
+    >>> browser.getControl(name='submit').click()
+    >>> browser.open(portal_url)
+
+We use the 'Add new' menu to add a new content item.
+
+    >>> browser.getLink('Add new').click()
+
+We select 'FormMultiFileField' and click the 'Add' button to get to the add form.
+
+    >>> browser.getControl('FormMultiFileField').click()
+    >>> browser.getControl(name='form.button.Add').click()
+    >>> 'FormMultiFileField' in browser.contents
+    True
+
+Now we fill the form and submit it.
+
+    >>> browser.getControl(name='title').value = 'FormMultiFileField Sample'
+    >>> browser.getControl('Save').click()
+    >>> 'Changes saved' in browser.contents
+    True
+
+Done! We added a new FormMultiFileField content item logged in as contributor.
+
+Finally, let's login back as manager.
+
+    >>> browser.getLink('Log out').click()
+    >>> browser.open(portal_url + '/login_form')
+    >>> browser.getControl(name='__ac_name').value = portal_owner
+    >>> browser.getControl(name='__ac_password').value = default_password
+    >>> browser.getControl(name='submit').click()
+    >>> browser.open(portal_url)
+
+
 

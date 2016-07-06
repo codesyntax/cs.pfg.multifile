@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="eea">
+
+  <head><title></title></head>
+
+  <body>
+
+  <metal:view_macro define-macro="view">
+  </metal:view_macro>
+
+  <metal:edit_macro define-macro="edit">
+    <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+      <metal:fill fill-slot="widget_body">
+        <metal:use use-macro="here/upload_widget/macros/upload" />
+      </metal:fill>
+    </metal:use>
+  </metal:edit_macro>
+
+  <metal:search_macro define-macro="search">
+    <div metal:use-macro="here/upload_widget/macros/edit"></div>
+  </metal:search_macro>
+
+  <metal:upload define-macro="upload">
+
+
+       <input type="file"
+           tal:attributes="name fieldName; data-jfiler-name fieldName"
+           name="files" id="filer_input" multiple="multiple" />
+
+
+       <script type="text/javascript">
+           $(document).ready(function(){
+               $('#filer_input').filer({
+                   showThumbs: true,
+                   addMore: true
+               });
+           });
+       </script>
+
+  </metal:upload>
+
+</body>
+</html>
