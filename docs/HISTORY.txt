@@ -4,4 +4,15 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
-- Initial release
+- fix manifest [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- metadata [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- add PFG as requirement [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- PFG field with jquery.filer for multiple file upload [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- initial package structure using ZopeSkel archetype template [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- initial package structure using ZopeSkel [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
