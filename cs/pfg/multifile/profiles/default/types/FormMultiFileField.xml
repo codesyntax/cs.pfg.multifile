@@ -6,7 +6,7 @@
   <property name="description"
     i18n:translate="">Mutiple File upload field</property>
   <property name="content_meta_type">FormMultiFileField</property>
-  <property name="content_icon">string:${portal_url}/FileField.gif</property>
+  <property name="content_icon">FileField.gif</property>
   <property name="product">cs.pfg.multifile</property>
   <property name="factory">addFormMultiFileField</property>
   <property name="immediate_view">atct_edit</property>
