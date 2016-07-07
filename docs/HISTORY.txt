@@ -4,7 +4,16 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- documentation [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- fix field icon [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- rename readme [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+-  [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- [ci skip] [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
 
 
 1.0 (2016-07-06)
