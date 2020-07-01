@@ -1,17 +1,20 @@
 """Main product initializer
 """
 
-from zope.i18nmessageid import MessageFactory
 from cs.pfg.multifile import config
-
 from Products.Archetypes import atapi
 from Products.CMFCore import utils
+from zope.i18nmessageid import MessageFactory
+
+import cs.pfg.multifile.patches
+
 
 # Define a message factory for when this product is internationalised.
 # This will be imported with the special name "_" in most modules. Strings
 # like _(u"message") will then be extracted by i18n tools for translation.
 
 multifileMessageFactory = MessageFactory('cs.pfg.multifile')
+
 
 
 def initialize(context):
