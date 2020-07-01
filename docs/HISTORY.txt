@@ -4,7 +4,14 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Change fieldname modified by jQuery.filer on selecting items
+  [erral]
+
+- Patch PFG's FormMailerAdapter to send files by e-mail
+  [erral]
+
+- Update jquery.filer
+  [erral]
 
 
 1.0.1 (2016-07-07)
@@ -36,4 +43,3 @@ Changelog
 - initial package structure using ZopeSkel archetype template [Mikel Larreategi <mlarreategi@codesyntax.com>]
 
 - initial package structure using ZopeSkel [Mikel Larreategi <mlarreategi@codesyntax.com>]
-
