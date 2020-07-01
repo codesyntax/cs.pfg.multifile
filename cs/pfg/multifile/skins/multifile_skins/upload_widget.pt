@@ -30,12 +30,22 @@
            tal:attributes="name fieldName; data-jfiler-name fieldName"
            name="files" id="filer_input" multiple="multiple" />
 
-
+        <input
+           type="hidden"
+           tal:attributes="data-jfiler-name fieldName"
+           id="hidden_filer_input"
+         />
        <script type="text/javascript">
            $(document).ready(function(){
                $('#filer_input').filer({
                    showThumbs: true,
-                   addMore: true
+                   addMore: true,
+                   onSelect: function () {
+                    $("#filer_input").attr(
+                      "name",
+                      $("#hidden_filer_input").data("jfiler-name")
+                    );
+                  },
                });
            });
        </script>
